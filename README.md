@@ -1,8 +1,8 @@
-# SubSync
+# whisper2tr
 
 **TR:** Yerel GPU'nuzda çalışan, İngilizce videolar için Türkçe altyazı oluşturan hafif bir araç. Ses tanıma tamamen yerel çalışır, çeviri için Gemini API kullanılır.
 
-**EN:** A lightweight tool that generates Turkish subtitles for English videos. Speech recognition runs fully local, translation uses the Gemini API.
+**EN:** A lightweight tool that generates Turkish subtitles for English videos using local Whisper speech recognition and the Gemini API for translation.
 
 ---
 
@@ -25,27 +25,31 @@ Video / URL → Whisper (yerel/local) → İngilizce SRT → Gemini API → Tür
 
 ## Kurulum / Installation
 
+### Arch Linux (AUR)
+
+```bash
+yay -S whisper2tr
+```
+
+```bash
+paru -S whisper2tr
+```
+
 ### Linux
 
 ```bash
-git clone https://github.com/yeggis/subsync.git
-cd subsync
+git clone https://github.com/yeggis/whisper2tr.git
+cd whisper2tr
 bash install.sh
 ```
 
 ### Windows
 
 ```
-git clone https://github.com/yeggis/subsync.git
+git clone https://github.com/yeggis/whisper2tr.git
 ```
 
 `install.bat` dosyasına sağ tık → **Yönetici olarak çalıştır**
-
-### Arch Linux (AUR)
-
-```bash
-yay -S subsync
-```
 
 ---
 
@@ -61,7 +65,7 @@ veya sistem tepsisinden başlatın.
 
 ### Windows
 
-Masaüstündeki **SubSync** kısayoluna çift tıklayın.
+Masaüstündeki **whisper2tr** kısayoluna çift tıklayın.
 
 ---
 
