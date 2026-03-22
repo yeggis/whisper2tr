@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+models/
+*.gguf
+*.bin
+*.safetensors
+pipeline_output/
+subsync_*/
+*.log
+.DS_Store
