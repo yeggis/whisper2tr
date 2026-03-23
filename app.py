@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SubSync — İngilizce → Türkçe Altyazı Oluşturucu
+whisper2tr — İngilizce → Türkçe Altyazı Oluşturucu
 Gradio tabanlı · Whisper + Gemini · Cross-platform
 """
 import gradio as gr
@@ -232,13 +232,13 @@ def reset_hardware():
 # ── Arayüz ────────────────────────────────────────────────────────────────────
 cfg = config.load()
 
-with gr.Blocks(title="SubSync") as demo:
+with gr.Blocks(title="whisper2tr") as demo:
 
     gr.HTML(f"""
     <div style='display:flex;align-items:baseline;justify-content:space-between;
                 padding:20px 0 4px;'>
       <div style='display:flex;align-items:baseline;gap:10px;'>
-        <span style='font-size:18px;font-weight:500;color:var(--color-text-primary);'>SubSync</span>
+        <span style='font-size:18px;font-weight:500;color:var(--color-text-primary);'>whisper2tr</span>
         <span style='font-size:12px;color:var(--color-text-tertiary);'>İngilizce → Türkçe altyazı</span>
       </div>
       <span style='font-size:11px;color:var(--color-text-tertiary);'>{config.hardware_summary()}</span>
