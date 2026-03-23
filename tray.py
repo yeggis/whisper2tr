@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-tray.py — SubSync sistem tepsisi
+tray.py — whisper2tr sistem tepsisi
 StatusNotifierItem (SNI) — Quickshell uyumlu, dbus-next
 Sol tık → tarayıcı aç
 Sağ tık → Yeniden başlat / Çıkış
@@ -75,11 +75,11 @@ class StatusNotifierItem(ServiceInterface):
 
     @dbus_property(access=PropertyAccess.READ)
     def Id(self) -> "s":
-        return "subsync"
+        return "whisper2tr"
 
     @dbus_property(access=PropertyAccess.READ)
     def Title(self) -> "s":
-        return "SubSync"
+        return "whisper2tr"
 
     @dbus_property(access=PropertyAccess.READ)
     def Status(self) -> "s":
@@ -99,7 +99,7 @@ class StatusNotifierItem(ServiceInterface):
 
     @dbus_property(access=PropertyAccess.READ)
     def ToolTip(self) -> "(sa(iiay)ss)":
-        return ["", [], "SubSync", "İngilizce → Türkçe Altyazı"]
+        return ["", [], "whisper2tr", "İngilizce → Türkçe Altyazı"]
 
     @method()
     def Activate(self, x: "i", y: "i"):
@@ -209,7 +209,7 @@ async def main():
     bus.export("/StatusNotifierItem", sni)
     bus.export("/MenuBar", menu)
 
-    await bus.request_name("org.kde.StatusNotifierItem-subsync-1")
+    await bus.request_name("org.kde.StatusNotifierItem-whisper2tr-1")
 
     try:
         watcher = bus.get_proxy_object(
@@ -219,7 +219,7 @@ async def main():
         )
         iface = watcher.get_interface("org.kde.StatusNotifierWatcher")
         await iface.call_register_status_notifier_item(
-            "org.kde.StatusNotifierItem-subsync-1"
+            "org.kde.StatusNotifierItem-whisper2tr-1"
         )
         print("[Tray] Quickshell tray'e kayıt olundu ✓")
     except Exception as e:
